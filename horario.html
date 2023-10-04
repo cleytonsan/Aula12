@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleição</title>
+    <style>
+        body{
+            border-radius: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Qual o horario</h1>
+    Que horas são?
+    <input type="button" value="Veririficar" onclick="clicar()">
+    <div id="res"></div>
+
+    <script>
+        function clicar(){
+            var now = new Date()
+            var hour = now.getHours();
+            var hourResponse = document.getElementById('res');
+            hourResponse.innerHTML += `<p>Seja bem vindo!</p>`
+            hourResponse.innerHTML += `<p>Agora são exatamente ${hour} horas</p>`
+            if(hour < 12){
+                hourResponse.innerHTML += `Bom dia!`
+            } else if (hour < 18){
+                hourResponse.innerHTML += `Boa tarde!`
+            } else if (hour > 18 && hora <= 23) {
+                hourResponse.innerHTML += `Boa noite!`
+            } else {
+                hourResponse.innerHTML += `Boa madrugada`
+            }
+
+        }
+    </script>
+</body>
+</html>

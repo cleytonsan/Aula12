@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eleição</title>
+</head>
+<body>
+    <h1>Eleição</h1>
+    Qual a sua idade? <input type="text" name="txtidade" id="txtidade">
+    <input type="button" value="Veririficar" onclick="clicar()">
+    <div id="res"></div>
+
+    <script>
+        function clicar(){
+            var age = document.getElementById('txtidade')
+            var ageResponse = document.getElementById('res')
+            var electionAge = Number(age.value)
+            ageResponse.innerHTML += `<p>Seja bem vindo!</p>`
+            ageResponse.innerHTML += `<p>Você tem ${electionAge} anos...</p>`
+            if(electionAge >= 18){
+                ageResponse.innerHTML += `<p>Voto Obrigatorio</p>`
+            } else if (electionAge >= 16 && electionAge < 18 || electionAge > 65){
+                ageResponse.innerHTML += `Voto opcional`
+            } else {
+                ageResponse.innerHTML += `Não Vota`
+            }
+
+        }
+    </script>
+</body>
+</html>
